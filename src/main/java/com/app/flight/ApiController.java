@@ -3,6 +3,7 @@ package com.app.flight;
 import com.amadeus.resources.FlightOrder;
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.Location;
+import com.amadeus.resources.Traveler;
 import com.amadeus.resources.FlightOfferSearch;
 import com.amadeus.resources.FlightPrice;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -55,13 +56,13 @@ public class ApiController {
 		}
 	}
 
-	@GetMapping("/order")
-	public String order(@RequestBody(required=true) FlightPrice offer) {
-		try {
-			FlightOrder results = AmadeusConnect.INSTANCE.order(offer);
-			return AmadeusConnect.INSTANCE.toJson(results);
-		} catch (ResponseException e) {
-			return e.getDescription();
-		}
+@GetMapping("/order")
+public String order(@RequestBody(required=true) FlightPrice offer, Traveler[] traveler) {
+	try {
+		FlightOrder results = AmadeusConnect.INSTANCE.order(offer, traveler);
+		return AmadeusConnect.INSTANCE.toJson(results);
+	} catch (ResponseException e) {
+		return e.getDescription();
 	}
+}
 }
