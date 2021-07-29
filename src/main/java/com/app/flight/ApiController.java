@@ -56,13 +56,13 @@ public class ApiController {
 		}
 	}
 
-@GetMapping("/order")
-public String order(@RequestBody(required=true) FlightPrice offer, Traveler[] traveler) {
-	try {
-		FlightOrder results = AmadeusConnect.INSTANCE.order(offer, traveler);
-		return AmadeusConnect.INSTANCE.toJson(results);
-	} catch (ResponseException e) {
-		return e.getDescription();
+	@GetMapping("/order")
+	public String order(@RequestBody(required=true) FlightPrice offer, Traveler[] traveler) {
+		try {
+			FlightOrder results = AmadeusConnect.INSTANCE.order(offer, traveler);
+			return AmadeusConnect.INSTANCE.toJson(results);
+		} catch (ResponseException e) {
+			return e.getDescription();
+		}
 	}
-}
 }
