@@ -23,27 +23,18 @@ public class ApiController {
 	}
 
 	@GetMapping("/locations")
-	public String locations(@RequestParam(required=true) String keyword) {
-		try {
-			Location[] results = AmadeusConnect.INSTANCE.location(keyword);
-			return AmadeusConnect.INSTANCE.toJson(results[0]);
-		} catch (ResponseException e) {
-			return e.getDescription();
-		}
+	public Location[] locations(@RequestParam(required=true) String keyword) throws ResponseException {
+		return AmadeusConnect.INSTANCE.location(keyword);
 	}
 
 	@GetMapping("/flights")
-	public String flights(@RequestParam(required=true) String origin, 
+	public FlightOfferSearch[] flights(@RequestParam(required=true) String origin, 
 						  @RequestParam(required=true) String destination,
 						  @RequestParam(required=true) String departDate,
 						  @RequestParam(required=true) String adults,
-						  @RequestParam(defaultValue="") String returnDate) {
-		try {
-			FlightOfferSearch[] search = AmadeusConnect.INSTANCE.flights(origin, destination, departDate, returnDate, adults);
-			return AmadeusConnect.INSTANCE.toJson(search[0]);
-		} catch (ResponseException e) {
-			return e.getDescription();
-		}
+						  @RequestParam(defaultValue="") String returnDate) 
+						  throws ResponseException {
+		return AmadeusConnect.INSTANCE.flights(origin, destination, departDate, returnDate, adults);
 	}
 	
 	@PostMapping("/confirm") 
