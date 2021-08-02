@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Locate from './components/Locate';
 
-function App() {
+export default function App() {
+  const [origin, setOrigin] = useState('');
+  const [destination, setDestination] = useState('');
+
+  const originate = (e) => {
+    setOrigin(e.target.value);
+  }
+
+  const destinate = (e) => {
+    setDestination(e.target.value);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Locate handleChoice={originate} display={"Destination"}/>
+      <Locate handleChoice={destinate} display={"Origin"}/>
     </div>
-  );
+  )
 }
-
-export default App;

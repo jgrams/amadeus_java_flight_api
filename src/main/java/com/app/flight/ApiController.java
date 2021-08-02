@@ -17,11 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RestController
 @RequestMapping(value="/api")
 public class ApiController {
-	@GetMapping("/")
-	public String hello() {
-		return "Hello World Travel!";
-	}
-
 	@GetMapping("/locations")
 	public Location[] locations(@RequestParam(required=true) String keyword) throws ResponseException {
 		return AmadeusConnect.INSTANCE.location(keyword);
