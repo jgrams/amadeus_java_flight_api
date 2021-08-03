@@ -20,10 +20,6 @@ enum AmadeusConnect {
             .build();
     }
 
-    public String toJson(Resource resource) {
-        return resource.getResponse().getBody();
-    }
-
     public Location[] location(String keyword) throws ResponseException {
         return amadeus.referenceData.locations.get(Params
             .with("keyword", keyword)
