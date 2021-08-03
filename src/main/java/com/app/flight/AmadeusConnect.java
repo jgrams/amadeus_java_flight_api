@@ -5,7 +5,7 @@ import com.amadeus.Params;
 import com.amadeus.resources.FlightOfferSearch;
 import com.amadeus.resources.Location;
 import com.amadeus.resources.Resource;
-import com.amadeus.resources.Traveler;
+import com.google.gson.JsonObject;
 import com.amadeus.referenceData.Locations;
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.FlightPrice;
@@ -30,7 +30,7 @@ enum AmadeusConnect {
             .and("subType", Locations.AIRPORT));
     }
 
-    public FlightOfferSearch[] flights(String origin, String destination, String departDate, String returnDate, String adults) throws ResponseException {
+    public FlightOfferSearch[] flights(String origin, String destination, String departDate, String adults, String returnDate) throws ResponseException {
         return amadeus.shopping.flightOffersSearch.get(
                   Params.with("originLocationCode", origin)
                           .and("destinationLocationCode", destination)
@@ -44,7 +44,7 @@ enum AmadeusConnect {
         return amadeus.shopping.flightOffersSearch.pricing.post(offer);
     }
 
-    public FlightOrder order(FlightPrice price, Traveler[] traveler) throws ResponseException {
-        return amadeus.booking.flightOrders.post(price, traveler);
+    public FlightOrder order(JsonObject order) throws ResponseException {
+        return amadeus.booking.flightOrders.post(order);
     }
 }
