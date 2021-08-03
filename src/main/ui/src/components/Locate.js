@@ -5,10 +5,6 @@ import LocationSelect from './LocationSelect'
 function Locate(props) {
     const [value, setValue] = useState('');
     const [locations, setLocations] = useState([]);
-    
-    const handleChange = (e) => {
-        setValue(e.target.value);
-    }
 
     const submit = (e) => {
         e.preventDefault();
@@ -23,7 +19,7 @@ function Locate(props) {
 
     return (
         <div>
-            <TextInput onSubmit={submit} display={props.display} onChange={handleChange} value={value} />
+            <TextInput onSubmit={submit} display={props.display} onChange={(e) => setValue(e.target.value)} value={value} />
             <LocationSelect data={locations} handleChoice={props.handleChoice} />
         </div>
     );
