@@ -4,8 +4,8 @@ import com.amadeus.Amadeus;
 import com.amadeus.Params;
 import com.amadeus.resources.FlightOfferSearch;
 import com.amadeus.resources.Location;
-import com.amadeus.resources.Resource;
 import com.google.gson.JsonObject;
+
 import com.amadeus.referenceData.Locations;
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.FlightPrice;
@@ -16,7 +16,7 @@ enum AmadeusConnect {
     private Amadeus amadeus;
     private AmadeusConnect() {
         this.amadeus = Amadeus
-            .builder("a3o4AnIgFZSNBYwo80SJWYHDGkcAlfZg", "S4BGFFVkW87lst6F")
+            .builder("LJ7RU9Uoc8SGWFdoatoqSrK4Fa6yMGVj", "J8ZTyEkMjP7sAD1p")
             .build();
     }
 
