@@ -9,7 +9,7 @@ To see how the app was built, read Part One [here](https://developers.amadeus.co
 You'll need:
 - A text editor or IDE
 - JDK 1.8 or later
-- Maven 3.2+ (though you can use Gradle 4+ with a few modifications!)
+- Maven 3.2+
 - A recent version of NPM and Node.JS
 
 API Access:
