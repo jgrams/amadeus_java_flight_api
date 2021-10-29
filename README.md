@@ -1,6 +1,6 @@
 # Welcome!
 
-This app is an example of how to use the Amadeus Flight APIs to find and book a flight!
+This app is an example of how to use the [Amadeus](https://amadeus.com/) Flight APIs to find and book a flight!
 
 To see how the app was built, read Part One [here](https://developers.amadeus.com/blog/flight-booking-application-java-spring-react-1), and Part Two [here](https://developers.amadeus.com/blog/flight-booking-application-java-spring-react-2).
 
@@ -13,7 +13,7 @@ You'll need:
 - A recent version of NPM and Node.JS
 
 API Access:
-You'll also need an API key and secret from Amadeus. Get them [here](https://developers.amadeus.com/register).
+- You'll also need an API key and secret from Amadeus. Get them [here](https://developers.amadeus.com/register).
 
 ## Installation
 
