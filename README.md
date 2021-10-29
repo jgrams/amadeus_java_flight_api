@@ -13,7 +13,7 @@ You'll need:
 - A recent version of NPM and Node.JS
 
 API Access:
-You'll also need an API key and secret from Amadeus. Get them [here](https://developers.amadeus.com/register).
+- You'll also need an API key and secret from Amadeus. Get them [here](https://developers.amadeus.com/register).
 
 ## Installation
 
